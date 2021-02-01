@@ -1,20 +1,12 @@
 
-<html>
-    <head>
-        <title>Tutor Bot</title>
-    </head>
-    <body>
-        <div>
-            <h1><a href="/">Tutor Bot</a></h1>
-        </div>
- 
-        <div>
-            <h2><a href="">Archivos de soporte</a></h2>
-            <p>Aquí encontrarás todo tipo de documentos que puedan ser útiles para tu estudio.</p>
-        </div>
- 
-        <div>
-            <h2><a href="">Sistema de recompensa</a></h2>
-            <p>Sistema de recompensación a aquellos usuarios que ayuden subiendo apuntes, exámenes etc..</p>
-        </div>
-    </body>
+<div>
+    <h1><a href="/">Tutor Bot</a></h1>
+</div>
+
+{% for post in posts %}
+    <div>
+        <p> publicado: {{ post.published_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
